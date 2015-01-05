@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:composition template="/template.xhtml">		
+		
+				
+		<ui:define name="conteudo">
+			
+				
+				
+<h:form>  
+<p:panel id="panel" header="Empreendimentos" style="margin-bottom:10px;">
+    <p:tabView dynamic="true" cache="true">  
+  		
+  		<p:tab title="Busca Empreendimentos">  
+            <h:panelGrid columns="1">
+										
+					<p:commandButton value="Importar Empreendimentos" action="#{principalBean.executaWS_Empreendimentos}" style=" top: 0px;"  />
+																										
+				</h:panelGrid>  
+        </p:tab>  
+  		
+        <p:tab title="Cadastro de Empreendimentos">  
+            <h:panelGrid columns="6">
+									
+					<h:outputLabel value="Regional" for="regional" />
+					<h:inputText id="regional" value="#{empBean.empreendimento.EMP_REGIONAL}" />
+					
+					<h:outputLabel value="Nome" for="nome" />
+					<h:inputText id="nome" value="#{empBean.empreendimento.EMP_NOME}" />
+					
+					<h:outputLabel value="Logradouro" for="logradouro" />
+					<h:inputText id="logradouro" value="#{empBean.empreendimento.EMP_LOGRADOURO}" />
+					
+					<h:outputLabel value="Numero" for="numero" />
+					<h:inputText id="numero" value="#{empBean.empreendimento.EMP_NUMERO}" />
+					
+					<h:outputLabel value="Bairro" for="bairro" />
+					<h:inputText id="bairro" value="#{empBean.empreendimento.EMP_BAIRRO}" />
+					
+					<h:outputLabel value="Cidade" for="cidade" />
+					<h:inputText id="cidade" value="#{empBean.empreendimento.EMP_CIDADE}" />
+					
+					<h:outputLabel value="Uf" for="uf" />
+					<h:inputText id="uf" value="#{empBean.empreendimento.EMP_UF}" />
+					
+					<h:outputLabel value="CEP" for="cep" />
+					<h:inputText id="cep" value="#{empBean.empreendimento.EMP_CEP}" />
+					
+					<h:outputLabel value="Complemeto" for="complemento" />
+					<h:inputText id="complemento" value="#{empBean.empreendimento.EMP_COMPLEMENTO}" />
+					
+					<h:outputLabel value="Lat.Lng" for="latlng" />
+					<h:inputText id="latlng" value="#{empBean.empreendimento.EMP_LATLNG}" />
+					
+					<h:outputLabel value="Primeira Visita" for="primeiravisita" />
+					<h:inputText id="primeiravisita" value="#{empBean.empreendimento.EMP_PRIMEIRAVISITA}" />
+					
+					<h:outputLabel value="Status" for="status" />
+					<h:inputText id="status" value="#{empBean.empreendimento.EMP_STATUS}" />
+					
+					
+																
+				</h:panelGrid>  
+        </p:tab>  
+   
+                     
+    </p:tabView>  
+    
+    		    <p:commandButton value="Salvar" action="#{empBean.grava}" style=" top: 0px;"  />
+        		<p:commandButton value="Excluir"  style=" top: 0px;"  /> 
+</p:panel>
+
+				
+				<p:dataTable value="#{empBean.empreendimentos}" var="emp">
+				
+					<p:column>
+        				<f:facet name="header">ID</f:facet>
+        				<h:outputText value="#{emp.EMP_ID}"/>
+        			</p:column>
+        			<p:column>
+        				<f:facet name="header">Nome</f:facet>
+        				<h:outputText value="#{emp.EMP_NOME}"/>
+        			</p:column>
+        			<p:column>
+        				<f:facet name="header">Alterar</f:facet>
+        				<h:commandLink value="Alterar">
+        					<f:setPropertyActionListener target="#{empBean.empreendimento}" value="#{emp}"></f:setPropertyActionListener>
+        				</h:commandLink>        				
+        			</p:column>
+        		        		
+        		        							
+				</p:dataTable>
+				
+				
+			</h:form>
+					
+							
+		</ui:define>
+		
+			<ui:define name="pesquisa">	
+		
+<!-- 		conteudo -->
+		
+		    </ui:define>				
+	
+	</ui:composition>
+</html>

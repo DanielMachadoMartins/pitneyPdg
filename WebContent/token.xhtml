@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:composition template="/template.xhtml">		
+		
+				
+		<ui:define name="conteudo">
+			
+				
+				
+<h:form>  
+<p:panel id="panel" header="Token" style="margin-bottom:10px;">
+    <p:tabView dynamic="true" cache="true">  
+  		
+        <p:tab title="Cadastro do Token">  
+            <h:panelGrid columns="2">
+									
+					<h:outputLabel value="Token" for="token" />
+					<h:inputText id="token" value="#{tokenBean.token.chave}" size="100" />
+										
+				</h:panelGrid>  
+        </p:tab>  
+   
+                     
+    </p:tabView>  
+    
+    		    <p:commandButton value="Salvar" action="#{tokenBean.grava}" style=" top: 0px;"  />
+        		<p:commandButton value="Excluir"  style=" top: 0px;"  /> 
+</p:panel>
+
+				
+				<p:dataTable value="#{tokenBean.tokens}" var="tk"   scrollable="true" >
+				
+					<p:column>
+        				<f:facet name="header">ID</f:facet>
+        				<h:outputText value="#{tk.id}"/>
+        			</p:column>
+        			<p:column>
+        				<f:facet name="header">Nome</f:facet>
+        				<h:outputText value="#{tk.chave}" />
+        			</p:column>
+        			<p:column>
+        				<f:facet name="header">Alterar</f:facet>
+        				<h:commandLink value="Alterar">
+        					<f:setPropertyActionListener target="#{tokenBean.token}" value="#{tk}"></f:setPropertyActionListener>
+        				</h:commandLink>        				
+        			</p:column>
+        		        		
+        		        							
+				</p:dataTable>
+				
+				
+			</h:form>
+					
+							
+		</ui:define>
+		
+			<ui:define name="pesquisa">	
+		
+<!-- 		conteudo -->
+		
+		    </ui:define>				
+	
+	</ui:composition>
+</html>

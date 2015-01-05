@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>PDG</title>
+	<h:outputStylesheet library="css" name="stylelogin.css"/>	
+	
+<style type="text/css"> 
+	.ui-widget, 
+	.ui-widget .ui-widget { 
+	font-size: 12px !important; 
+	} 
+</style>
+
+</h:head>
+
+<h:body>
+	<div id="geral">
+	
+		<div id="banner">
+						
+			</div>				
+				
+				<h:form>  
+					<p:panel id="panel" header="Autenticação no Sistema" style="margin-bottom:10px;">
+					
+					
+					    <p:tabView dynamic="true" cache="true">  
+					  
+					        <p:tab title="Login">  
+					            <h:panelGrid columns="2">
+									
+										<h:outputLabel value="Login" for="login" />
+										<h:inputText id="login" value="#{loginBean.usuario.login}" />
+										
+										<h:outputLabel value="Senha" for="senha" />
+										<h:inputSecret id="senha" value="#{loginBean.usuario.senha}" />
+																					
+									</h:panelGrid>  
+					        </p:tab>  
+					   
+					                     
+					    </p:tabView>  
+				    
+				    		    <p:commandButton value="Entrar" action="#{loginBean.efetuaLogin}"  style=" top: 0px;"  />
+				    </p:panel>
+							
+			</h:form>
+			
+		</div>
+	</h:body>
+</html>

@@ -1,0 +1,62 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence 
+		http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+	version="2.0">
+
+	<persistence-unit name="pdg" transaction-type="RESOURCE_LOCAL">
+	
+	<provider>org.hibernate.ejb.HibernatePersistence</provider>
+	
+		<properties>
+			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2008Dialect"/>	
+			<property name="hibernate.hbm2ddl.auto" value="update"/>					 
+			<property name="hibernate.show_sql" value="true"/>
+			<property name="hibernate.format_sql" value="true"/>			
+			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:jtds:sqlserver://200.155.3.29:1433/PBBI"/>
+			<property name="javax.persistence.jdbc.user" value="pbbi"/>
+			<property name="javax.persistence.jdbc.password" value="pbbi@2014"/>
+		</properties>	
+
+<!-- 		<properties> -->
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2008Dialect"/>	 -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="update"/> 					  -->
+<!-- 			<property name="hibernate.show_sql" value="true"/> -->
+<!-- 			<property name="hibernate.format_sql" value="true"/>			 -->
+<!-- 			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver"/> -->
+<!-- 			<property name="javax.persistence.jdbc.url" value="jdbc:jtds:sqlserver://localhost:1433/pdg"/> -->
+<!-- 			<property name="javax.persistence.jdbc.user" value="sa"/> -->
+<!-- 			<property name="javax.persistence.jdbc.password" value="pdgpdg"/> -->
+<!-- 		</properties>	 -->
+
+
+<!-- 	<properties> -->
+<!-- 	  <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />  -->
+<!-- 	  <property name="hibernate.hbm2ddl.auto" value="update" />  -->
+<!-- 	  <property name="hibernate.show_sql" value="true" />  -->
+<!-- 	  <property name="hibernate.format_sql" value="true" />  -->
+<!-- 	  <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />  -->
+<!-- 	  <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pdg" />  -->
+<!-- 	  <property name="javax.persistence.jdbc.user" value="root" />  -->
+<!-- 	  <property name="javax.persistence.jdbc.password" value="root" />  -->
+<!-- 	</properties>	 -->
+
+
+<!-- 		<properties> -->
+<!-- 			<property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2008Dialect"/>	 -->
+<!-- 			<property name="hibernate.hbm2ddl.auto" value="update"/>					  -->
+<!-- 			<property name="hibernate.show_sql" value="true"/> -->
+<!-- 			<property name="hibernate.format_sql" value="true"/>			 -->
+<!-- 			<property name="javax.persistence.jdbc.driver" value="net.sourceforge.jtds.jdbc.Driver"/> -->
+<!-- 			<property name="javax.persistence.jdbc.url" value="jdbc:jtds:sqlserver://200.155.3.29:1433/PBBI"/> -->
+<!-- 			<property name="javax.persistence.jdbc.user" value="pbbi"/> -->
+<!-- 			<property name="javax.persistence.jdbc.password" value="pbbi@2014"/> -->
+<!-- 		</properties>	 -->
+
+
+
+
+	</persistence-unit>
+
+</persistence>

@@ -1,0 +1,74 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>PDG</title>
+	<h:outputStylesheet library="css" name="style.css"/>	
+	
+<style type="text/css"> 
+	.ui-widget, 
+	.ui-widget .ui-widget { 
+	font-size: 12px !important; 
+	} 
+</style>
+	
+</h:head>
+
+<h:body>
+
+	<div id="geral">
+			
+			<div id="banner">
+						
+			</div>
+			
+			<div id="infoLogin">
+				Logado Como: #{loginBean.usuario.login}
+			</div>
+				
+			<div id="cabecalho">
+					<!--codigo do cabecalho -->
+					<!-- 		MENU -->
+
+						<h:form>
+							<p:menubar>
+								<p:menuitem value="Home" url="home.xhtml"/>
+								<p:submenu label="Easyseek">									
+									<p:menuitem value="Empreendimentos" url="empreendimento.xhtml"/>
+									<p:menuitem value="Visitas" url="visitas.xhtml"/>
+								</p:submenu>
+								<p:submenu label="AZ Tronic">									
+									<p:menuitem value="Comercial Vendas" url="comercialVenda.xhtml"/>
+									<p:menuitem value="Análise de Crédito" url="analiseCredito.xhtml"/>
+									<p:menuitem value="Compradores" url="compradores.xhtml"/>
+								</p:submenu>
+								<p:submenu label="Configuração">
+									<p:menuitem value="Token"  url="token.xhtml"/>
+									<p:menuitem value="Path do XML"  url="caminhoXml.xhtml"/>
+								</p:submenu>
+								<p:menuitem value="Ajuda" url="ajuda.xhtml"/>
+								<p:menuitem value="Logout"  action="#{loginBean.efetuaLogout}"/>
+							</p:menubar>
+						</h:form>
+	
+					<!-- 	   MENU -->
+			</div>
+						
+					<div id="container">
+
+						<div id="conteudo">		
+							<ui:insert name="conteudo" />
+						</div>
+														
+					</div>
+		
+			<div id="rodape">		
+					<!--codigo do rodape-->
+					
+			</div>
+	</div>
+</h:body>
+</html>

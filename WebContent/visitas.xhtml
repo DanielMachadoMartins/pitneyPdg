@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui">
+
+
+	<ui:composition template="/template.xhtml">		
+		
+				
+		<ui:define name="conteudo">
+			
+				
+				
+<h:form>  
+<p:panel id="panel" header="Visitas" style="margin-bottom:10px;">
+    <p:tabView dynamic="true" cache="true">  
+  		
+  		<p:tab title="Busca Visitas">  
+            <h:panelGrid columns="2">
+					
+					<h:outputLabel value="ID Empreendimento" for="id_emp" />
+					<h:inputText id="id_emp" value="#{visBean.ID_EMP}" />
+					
+					<h:outputLabel value="Data" for="data_busca" />
+					<h:inputText id="data_busca" value="#{visBean.DATA}" />
+										
+					<p:commandButton value="Importar Visitas" action="#{principalBean.executaWS_Visitas}" style=" top: 0px;"  />
+																										
+				</h:panelGrid>  
+        </p:tab>  
+  		
+        <p:tab title="Cadastro de Visitas">  
+            <h:panelGrid columns="6">
+									
+					<h:outputLabel value="ID" for="id" />
+					<h:inputText id="id" value="#{visBean.visita.VIS_ID}" />
+					
+					<h:outputLabel value="Tipo" for="tipo" />
+					<h:inputText id="tipo" value="#{visBean.visita.VIS_TIPO}" />
+					
+					<h:outputLabel value="Data" for="data" />
+					<h:inputText id="data" value="#{visBean.visita.VIS_DATA}" />
+					
+					<h:outputLabel value="Nome" for="nome" />
+					<h:inputText id="nome" value="#{visBean.visita.VIS_NOME}" />
+					
+					<h:outputLabel value="Sexo" for="sexo" />
+					<h:inputText id="sexo" value="#{visBean.visita.VIS_SEXO}" />
+					
+					<h:outputLabel value="Email" for="email" />
+					<h:inputText id="email" value="#{visBean.visita.VIS_EMAIL}" />
+					
+					<h:outputLabel value="Telefone" for="telefone" />
+					<h:inputText id="telefone" value="#{visBean.visita.VIS_TELEFONE}" />
+					
+					<h:outputLabel value="Celular" for="celular" />
+					<h:inputText id="celular" value="#{visBean.visita.VIS_CELULAR}" />
+					
+					<h:outputLabel value="Logradouro" for="logradouro" />
+					<h:inputText id="logradouro" value="#{visBean.visita.VIS_LOGRADOURO}" />
+					
+					<h:outputLabel value="Número" for="numero" />
+					<h:inputText id="numero" value="#{visBean.visita.VIS_NUMERO}" />
+					
+					<h:outputLabel value="Bairro" for="bairro" />
+					<h:inputText id="bairro" value="#{visBean.visita.VIS_BAIRRO}" />
+					
+					<h:outputLabel value="Cidade" for="cidade" />
+					<h:inputText id="cidade" value="#{visBean.visita.VIS_CIDADE}" />
+															
+					<h:outputLabel value="UF" for="uf" />
+					<h:inputText id="uf" value="#{visBean.visita.VIS_UF}" />
+					
+					<h:outputLabel value="CEP" for="cep" />
+					<h:inputText id="cep" value="#{visBean.visita.VIS_CEP}" />
+					
+					<h:outputLabel value="Complemento" for="complemento" />
+					<h:inputText id="complemento" value="#{visBean.visita.VIS_COMPLEMENTO}" />
+					
+					<h:outputLabel value="LatLng" for="latlng" />
+					<h:inputText id="latlng" value="#{visBean.visita.VIS_LATLNG}" />
+					
+					<h:outputLabel value="Empresa" for="empresa" />
+					<h:inputText id="empresa" value="#{visBean.visita.VIS_EMPRESA}" />
+					
+					<h:outputLabel value="Gerente" for="gerente" />
+					<h:inputText id="gerente" value="#{visBean.visita.VIS_GERENTE}" />
+					
+					<h:outputLabel value="Corretor" for="corretor" />
+					<h:inputText id="corretor" value="#{visBean.visita.VIS_CORRETOR}" />
+					
+					<h:outputLabel value="Mídia" for="midia" />
+					<h:inputText id="midia" value="#{visBean.visita.VIS_MIDIA}" />
+					
+					<h:outputLabel value="Veículo" for="veiculo" />
+					<h:inputText id="veiculo" value="#{visBean.visita.VIS_VEICULO}" />
+					
+					<h:outputLabel value="Programa" for="programa" />
+					<h:inputText id="programa" value="#{visBean.visita.VIS_PROGRAMA}" />
+					
+					<h:outputLabel value="Reservou" for="reservou" />
+					<h:inputText id="reservou" value="#{visBean.visita.VIS_RESERVOU}" />
+					
+					<h:outputLabel value="Observações" for="observacoes" />
+					<h:inputText id="observacoes" value="#{visBean.visita.VIS_OBSERVACOES}" />
+					
+					<h:outputLabel value="Profissão" for="profissao" />
+					<h:inputText id="profissao" value="#{visBean.visita.VIS_PROFISSAO}" />		
+					
+																
+				</h:panelGrid>  
+        </p:tab>  
+   
+                     
+    </p:tabView>  
+    
+    		    <p:commandButton value="Salvar" action="#{visBean.grava}" style=" top: 0px;"  />
+        		<p:commandButton value="Excluir"  style=" top: 0px;"  /> 
+</p:panel>
+
+				
+				<p:dataTable value="#{visBean.visitas}" var="vis">
+				
+					<p:column>
+        				<f:facet name="header">ID</f:facet>
+        				<h:outputText value="#{vis.VIS_ID}"/>
+        			</p:column>
+        			<p:column>
+        				<f:facet name="header">Data</f:facet>
+        				<h:outputText value="#{vis.VIS_DATA}"/>
+        			</p:column>
+        			<p:column>
+        				<f:facet name="header">Nome</f:facet>
+        				<h:outputText value="#{vis.VIS_NOME}"/>
+        			</p:column>
+        			<p:column>
+        				<f:facet name="header">Alterar</f:facet>
+        				<h:commandLink value="Alterar">
+        					<f:setPropertyActionListener target="#{visBean.visita}" value="#{vis}"></f:setPropertyActionListener>
+        				</h:commandLink>        				
+        			</p:column>
+        		        		
+        		        							
+				</p:dataTable>
+				
+				
+			</h:form>
+					
+							
+		</ui:define>
+		
+			<ui:define name="pesquisa">	
+		
+<!-- 		conteudo -->
+		
+		    </ui:define>				
+	
+	</ui:composition>
+</html>

@@ -1,0 +1,48 @@
+#geral {
+	position:relative;
+	width:1024px;
+	display:block;
+    margin:0px auto;
+	}
+	
+#banner{
+	background:url("../resources/images/banner.png");
+	width:1024px;
+    height:70px;
+	background-repeat:no-repeat;
+    }
+	
+#cabecalho{	
+    position:relative;
+    display:block;
+    float:left;
+    width:1024px;
+    margin: 0px auto;
+    padding:5px;    
+    background-repeat:no-repeat;
+    background-position:center center;
+    }
+    
+#container{
+	position:relative;
+	width:1024px;
+	display:block;
+    margin:0px auto;
+    }
+
+#rodape{
+    background-color:#E8E8E8;
+    width: 1024px;
+    height:80px;
+    position:relative;
+    display:inline;
+    float:left;
+    font-size: 12px;
+    
+    font-family:sans-serif;
+    border-top:#9AC0CD solid 1px;
+    text-align: center;
+    }
+	
+
+
